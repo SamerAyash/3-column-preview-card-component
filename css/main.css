@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+:root{
+    --primary-orange: hsl(31, 77%, 52%);
+    --dark-cyan:hsl(184, 100%, 22%);
+    --very-dark-cyan:hsl(179, 100%, 13%);
+    --light-gray:hsl(0, 0%, 95%);
+    --card-borader-radius: 7px;
+}
+body{
+    font-family: "Big Shoulders Display", sans-serif;
+    background-color: var(--light-gray);
+    font-size: 15px;    
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.container .card{
+    width:  245px;
+    height: 450px;
+    padding: 42px;
+}
+.container .card-one{
+    background-color: var(--primary-orange);
+    border-radius: var(--card-borader-radius) 0 0 var(--card-borader-radius);
+}
+.container .card-two{
+    background-color: var(--dark-cyan);
+}
+.container .card-three{
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 var(--card-borader-radius) var(--card-borader-radius) 0;
+}   
+.card h1{
+    color: var(--light-gray);
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-variant: all-petite-caps;;
+}
+.card p{
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin-bottom: 50px;
+}
+.card .button{
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px;
+    width: 130px;
+    border-radius: 25px;
+    outline: none;
+    border: 2px solid var(--light-gray);
+    transition: all 0.2s ease-in-out;
+    margin-left: -5px;
+}
+.card-one .button{
+    color: var(--primary-orange);
+}
+.card-two .button{
+    color: var(--dark-cyan);
+}
+.card-three .button{
+    color: var(--very-dark-cyan);
+}
+.card .button:hover{
+    color: var(--light-gray);
+    background-color: transparent;
+}
+.card .button:active {
+    transform: scale(0.9);
+  }
+.attribution { 
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    position: absolute; 
+    bottom: 10px;
+    width: 100%;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media only screen and (max-width: 767px) {
+    .container {
+      position: static;
+      margin: 10% 0;
+      flex-direction: column;
+      transform: translate(0,0);
+    }
+    .container .card-one{
+      border-radius: var(--card-borader-radius) var(--card-borader-radius) 0 0;
+    }
+  
+    .container .card-three{
+      border-radius: 0 0 var(--card-borader-radius) var(--card-borader-radius);
+    }
+    .attribution{
+        position: relative;
+    }
+  }
